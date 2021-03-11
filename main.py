@@ -8,8 +8,8 @@ app = Flask(__name__)
 
 s = requests.Session()
 
-def GETgreg(key):
-	res = s.get("https://some_url_shit.com/bw/{0}".format(key))
+def GETgreg():
+	res = s.get("https://some_url_shit.com/bw/")
 
 	return res.json()
 
@@ -29,7 +29,7 @@ def api(key, method):
 		POSTgreg(request.args.get("data"))
 		return "POST"
 	elif method == "GET":
-		TESTREMOVETHIS = GETgreg(key)
+		TESTREMOVETHIS = GETgreg()
 		return TESTREMOVETHIS
 	else:
 		return key
